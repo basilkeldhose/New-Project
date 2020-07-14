@@ -1,0 +1,60 @@
+
+            <form #registrationForm="ngForm" (ngSubmit)="registerationForm.valid
+                && onSubmit(registerationForm)">
+                <div>
+                    <input type="text" #fullname="ngModel"
+                        [(ngModel)]="registerservice.selectedUser.fullname"
+                        name="fullname" placeholder="Full Name"
+                        required [ngClass]="{'invalid-textbox'
+                        :registerationForm.submitted && !fullname.valid }">
+                    <div *ngIf="registerationForm.submitted && !fullname.valid">
+                        <label class="validation-message">This field is
+                            required.</label>
+                    </div>
+                </div>
+                <div>
+                    <input type="text" #address="ngModel"
+                        [(ngModel)]="registerservice.selectedUser.address"
+                        name="address" placeholder="address"
+                        required [ngClass]="{'invalid-textbox'
+                        :registerationForm.submitted && !address.valid}">
+                    <div *ngIf="registerationForm.submitted && !address.valid">
+                        <label class="validation-message">This field is
+                            required.</label>
+                    </div>
+                </div>
+                <div>
+                    <input type="text" #username="ngModel"
+                        [(ngModel)]="registerservice.selectedUser.username"
+                        name="username" placeholder="username"
+                        required [ngClass]="{'invalid-textbox'
+                        :registerationForm.submitted && !username.valid}">
+                    <div *ngIf="registerationForm.submitted && !username.valid">
+                        <label class="validation-message">This field is
+                            required.</label>
+                    </div>
+                </div>
+                <div>
+                    <input type="password" #password="ngModel"
+                        [(ngModel)]="registerservice.selectedUser.password"
+                        name="password" placeholder="Password"
+                        minlength="4" required [ngClass]="{'invalid-textbox'
+                        :registerationForm.submitted && !password.valid }">
+                    <div *ngIf="registerationForm.submitted && password.errors">
+                        <label *ngIf="password.errors.required"
+                            class="validation-message">This field is required.</label>
+                        <label *ngIf="password.errors.minlength"
+                            class="validation-message">Enter atleast 4
+                            characters.</label>
+                    </div>
+                </div>
+                <input class="btn btn-primary" type="button" value="Register">
+            </form>
+
+
+<div class="sucess" *ngIf='showmessage'>
+    Registeration sucessfull....
+</div>
+<div class="alert" *ngIf=' errormessage'>
+    {{ errormessage}}
+</div>

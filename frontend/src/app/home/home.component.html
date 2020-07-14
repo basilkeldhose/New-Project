@@ -1,0 +1,60 @@
+<table *ngIf="candidatedetails">
+    <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Roll no
+            </th>
+            <th>
+                Address
+            </th>
+            <th>
+                Class
+            </th>
+            <th>
+                Phone no
+            </th>
+            <th>
+                Gender
+            </th>
+            <th>
+
+            </th>
+            <th>
+
+            </th>
+        </tr>
+        <tr>
+            <td>
+                {{studentdetails.fullname}}
+            </td>
+
+            <td>
+                {{studentdetails.rollno}}
+            </td>
+
+            <td>
+                {{studentdetails.address}}
+            </td>
+
+            <td>
+                {{studentdetails.class}}
+            </td>
+            <td>
+                {{studentdetails.phone no}}
+            </td>
+            <td>
+                {{studentdetails.gender}}
+            </td>
+            <td>
+                <button (click)="edit()">Edit</button>
+            </td>
+            <td>
+                <button (click)="delete()">Delete</button>
+            </td>
+
+
+        </tr>
+    </table>

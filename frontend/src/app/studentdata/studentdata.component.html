@@ -1,0 +1,58 @@
+<form #studentForm='ngForm' (ngSubmit)="studentForm.valid
+&& onSubmit(studentForm)">
+<div>
+    <input type="text" #fullname="ngModel"
+    [(ngModel)]="studentservice.selectedStudent.fullname"
+    name="fullname" placeholder="Full Name"
+    required [ngClass]="{'invalid-textbox'
+    :studentForm.submitted && !fullname.valid }">
+</div>
+<div>
+    <input type="text" #rollno="ngModel"
+    [(ngModel)]="studentservice.selectedStudent.rollno"
+    name="roll no" placeholder="roll no"
+    required [ngClass]="{'invalid-textbox'
+    :studentForm.submitted && !rollno.valid }">
+</div>
+<div>
+    <input type="text" #class="ngModel"
+    [(ngModel)]="studentservice.selectedStudent.class"
+    name="class" placeholder="Class"
+    required [ngClass]="{'invalid-textbox'
+    :studentForm.submitted && !class.valid }">
+</div>
+<div>
+    <input type="text" #address="ngModel"
+    [(ngModel)]="studentservice.selectedStudent.address"
+    name="address" placeholder="address"
+    required [ngClass]="{'invalid-textbox'
+    :studentForm.submitted && !address.valid }">
+</div>
+<div>
+    <input type="text" #phone="ngModel"
+    [(ngModel)]="studentservice.selectedStudents.phone"
+    name="phone" placeholder="Phone no"
+    required [ngClass]="{'invalid-textbox'
+    :studentForm.submitted && !phone.valid }">
+</div>
+<div>
+    <form #studentForm='ngForm'>
+        <p>Please select your gender:</p>
+        <input type="radio" [(ngModel)]="studentservice.selectedStudent.gender"
+        name="gender"
+        required [ngClass]="{'invalid-textbox'
+        :studentForm.submitted && !gender.valid }" value="male">
+        <label for="male">Male</label><br>
+        <input type="radio" [(ngModel)]="studentservice.selectedStudent.gender"
+        name="gender"
+        required [ngClass]="{'invalid-textbox'
+        :studentForm.submitted && !gender.valid }" value="female">
+        <label for="female">Female</label><br>
+        <input type="radio" [(ngModel)]="studentservice.selectedStudent.gender"
+        name="gender"
+        required [ngClass]="{'invalid-textbox'
+        :studentForm.submitted && !phone.valid }" value="other">
+        <label for="other">Other</label>
+</div>
+<input class="btn btn-primary" type="button" value="Register">
+</form>
